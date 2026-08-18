@@ -15,7 +15,7 @@ import BossDashboard from './boss/BossDashboard';
 import DashboardLayout from './layouts/DashboardLayout';
 
 function App() {
-  const isConfigured = import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY;
+  const isConfigured = (import.meta.env.VITE_SUPABASE_URL || 'https://kmuqeocptoatdcgyqixp.supabase.co') && (import.meta.env.VITE_SUPABASE_ANON_KEY || import.meta.env.JWT);
 
   if (!isConfigured) {
     return (

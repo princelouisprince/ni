@@ -8,8 +8,8 @@ function ConfigCheck() {
 
   useEffect(() => {
     setConfig({
-      hasSupabaseUrl: !!import.meta.env.VITE_SUPABASE_URL,
-      hasSupabaseKey: !!import.meta.env.VITE_SUPABASE_ANON_KEY,
+      hasSupabaseUrl: !!(import.meta.env.VITE_SUPABASE_URL || 'https://kmuqeocptoatdcgyqixp.supabase.co'),
+      hasSupabaseKey: !!(import.meta.env.VITE_SUPABASE_ANON_KEY || import.meta.env.JWT),
     });
   }, []);
 
